@@ -1,9 +1,10 @@
 import java.util.Scanner;
 //import java.time.localDateTime;    
 
-public class ContaCorrente{
+public class ContaCorrente {
     public static void main(String[] args){
         Scanner leitura = new Scanner(System.in);
+
         ClienteBanco cliente = new ClienteBanco();
         cliente.setNome("Giovanna");
         cliente.setTipoConta("Corrente");
@@ -23,7 +24,26 @@ public class ContaCorrente{
         System.out.println("\nOlá " + cliente.getNome() + ", seja bem-vindo(a)!");
         System.out.println("\nConta: " + cliente.getTipoConta());
         System.out.printf("\nSaldo atual: R$ %.2f%n", juros.getSaldo());
-        System.out.println("\n**********************************************************");
+
+
+        //String nome = "Giovanna";
+        //String tipoConta = "Conta corrente";
+        //Double saldo = 1800.00;
+        //Double limiteEspecial = 500.00; // até onde pode ficar negativo
+        //Double jurosPositivo = 0.1; // 1% ao mês
+        //Double jurosNegativos = 0.5; // 5% ao mês
+        //Double simulacao = 0.0;
+        //int escolha;
+        //String ultimaOperacao = "Nenhuma";
+        //double valorUltimaOperacao = 0.0;
+
+        //while (escolha != 6){
+        // Apresentar dados iniciais...
+        //System.out.println("**********************************************************");
+        //System.out.println("\nOlá " + nome + ", seja bem-vindo(a)!");
+        //System.out.println("\nConta: " + tipoConta);
+        //System.out.printf("\nSaldo atual: R$ %.2f%n", saldo);
+        //System.out.println("\n**********************************************************");
 
         //Prompt de opções:
         System.out.println("\nEscolha uma opção:");
@@ -53,13 +73,12 @@ public class ContaCorrente{
 
                 case 4:
                     System.out.printf("Última operação: %s de R$ %.2f%n", juros.getUltimaOperacao(), juros.getValorUltimaOperacao());
-                    break;
                 
                 case 5:
-                    System.out.println("Quantos meses deseja simular?");
+                    System.out.println("Digite quantos meses deseja simular: ");
                     juros.SimuladorMensal(leitura.nextInt());
                     break;
-            
+
                 case 6:
                     System.out.println("Obrigada por utilizar nossos serviços " + cliente.getNome() + "!\nVolte sempre!!");
                     break;
