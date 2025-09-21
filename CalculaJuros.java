@@ -2,7 +2,6 @@ public class CalculaJuros extends ContaOperacoes {
     private ContaOperacoes conta;
     private double jurosPositivo;
     private double jurosNegativo;
-    private double simulacao;
 
     public CalculaJuros(ContaOperacoes conta){
         this.conta = conta;

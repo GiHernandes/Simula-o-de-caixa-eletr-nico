@@ -106,6 +106,7 @@ public class ContaCorrente {
                 default:
                     System.out.println("Opção inválida. \nTente novamente.");
             } 
+            leitura.close();
         }       
     }
 }
