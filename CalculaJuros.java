@@ -1,7 +1,12 @@
 public class CalculaJuros extends ContaOperacoes {
+    private ContaOperacoes conta;
     private double jurosPositivo;
     private double jurosNegativo;
     private double simulacao;
+
+    public CalculaJuros(ContaOperacoes conta){
+        this.conta = conta;
+    }
 
     public void setJurosPositivo(double jurosPositivo){
     this.jurosPositivo = jurosPositivo;
@@ -22,7 +27,7 @@ public class CalculaJuros extends ContaOperacoes {
     // método
 
     public void SimuladorMensal(int meses){
-        simulacao = saldo;
+        double simulacao = conta.getSaldo();
         if (meses > 0){
             for (int i = 1; i <= meses; i++){
                 if (simulacao >= 0){

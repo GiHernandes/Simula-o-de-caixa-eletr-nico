@@ -1,7 +1,7 @@
 public class ContaOperacoes {
     protected double saldo;
-    private String ultimaOperacao;
-    private double valorUltimaOperacao;
+    protected String ultimaOperacao;
+    protected double valorUltimaOperacao;
 
     public void setSaldo(double saldo){
         this.saldo = saldo;
