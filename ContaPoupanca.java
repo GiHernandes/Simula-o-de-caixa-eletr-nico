@@ -3,6 +3,8 @@ public class ContaPoupanca extends ContaOperacoes{
     private double saldoPoupanca;
     private double rendimento;
     private double taxaPoupanca;
+    private double calculoRendimento;
+    private double calculoTaxaPoupanca;
 
     public ContaPoupanca(ContaOperacoes conta){
         this.conta = conta;
@@ -35,8 +37,14 @@ public class ContaPoupanca extends ContaOperacoes{
 
             public void aplicarNaPoupanca(double investimento){
             if (investimento > 0 && investimento <= conta.getSaldo()){
+                if (investimento >= 500){
+                calculoRendimento = saldoPoupanca * rendimento;
+                saldoPoupanca += calculoRendimento;
+                }
                 conta.setSaldo(conta.getSaldo() - investimento);
                 saldoPoupanca += investimento;
+                calculoTaxaPoupanca = saldoPoupanca * taxaPoupanca;
+                saldoPoupanca += calculoTaxaPoupanca;
                 conta.setUltimaOperacao("Aplicação em conta poupança");
                 conta.setValorUltimaOperacao(investimento);
                 System.out.println("Valor aplicado com sucesso!");
